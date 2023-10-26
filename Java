@@ -1,0 +1,45 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
+
+/**
+ * A Wombat can move and eat leaves.
+ * 
+ * @author Omaima
+ */
+public class Wombat extends Actor
+{
+    /**
+     * Move one step forward.
+     */
+    public void moveForward()
+    {
+        move(2);
+    }
+    
+    /**
+     * Turn left by 90 degrees.
+     */
+    public void turnLeft()
+    {
+        turn(-90);
+    }
+     /**
+     * Turn right by 90 degrees.
+     */
+    public void turnRight()
+    {
+        turn(90);
+    }
+     
+    
+    /**
+     * Eat a leaf (if there is one in our cell).
+     */
+    public void eatLeaf()
+    {
+        Actor leaf = getOneObjectAtOffset(0, 0, Leaf.class);
+        if (leaf != null) {
+            // eat the leaf...
+            getWorld().removeObject(leaf);
+        }
+    }
+}
